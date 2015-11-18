@@ -5,6 +5,8 @@ import com.javier.health.service.UserServiceImpl;
 import com.javier.health.webservices.UserResponseHandler;
 import com.javier.health.webservices.UserResponseListener;
 
+import java.util.List;
+
 /**
  * Created by javiergonzalezcabezas on 18/11/15.
  */
@@ -15,15 +17,15 @@ public class UserController implements UserResponseHandler {
         this.mListener = mListener;
     }
 
-    public void request(String string) {
+    public void request() {
         UserServiceImpl receiver = new UserServiceImpl();
-        receiver.getUser(this, string);
+        receiver.getUser(this);
 
     }
 
     @Override
-    public void handlUser(User fuseClient) {
-        mListener.onSuccess(fuseClient);
+    public void handlUser(List<User> userList) {
+        mListener.onSuccess(userList);
     }
 
     @Override
