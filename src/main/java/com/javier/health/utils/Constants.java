@@ -15,4 +15,6 @@ public class Constants {
     public static final String TYPE_STRING_DELETE = "DELETE";
 
     public static final String URL = "http://fast-gorge.herokuapp.com/contacts";
+
+    public static final String PARCELABLE = "parcelable";
 }

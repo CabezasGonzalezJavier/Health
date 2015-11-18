@@ -1,12 +1,15 @@
 package com.javier.health.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by javiergonzalezcabezas on 18/11/15.
  */
-public class User {
+public class User implements Parcelable {
 
     @SerializedName("first_name")
     @Expose
@@ -32,6 +35,31 @@ public class User {
     @SerializedName("updatedAt")
     @Expose
     private String updatedAt;
+
+    public User(){}
+
+    public User(Parcel in) {
+        firstName = in.readString();
+        surname = in.readString();
+        address = in.readString();
+        phoneNumber = in.readString();
+        email = in.readString();
+        id = in.readInt();
+        createdAt = in.readString();
+        updatedAt = in.readString();
+    }
+
+    public static final Creator<User> CREATOR = new Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel in) {
+            return new User(in);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
 
     /**
      *
@@ -177,4 +205,20 @@ public class User {
         this.updatedAt = updatedAt;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(firstName);
+        dest.writeString(surname);
+        dest.writeString(address);
+        dest.writeString(phoneNumber);
+        dest.writeString(email);
+        dest.writeInt(id);
+        dest.writeString(createdAt);
+        dest.writeString(updatedAt);
+    }
 }
