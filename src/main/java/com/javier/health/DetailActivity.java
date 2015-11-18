@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import com.javier.health.models.User;
 import com.javier.health.utils.Constants;
+import com.javier.health.utils.Utils;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -39,8 +40,8 @@ public class DetailActivity extends AppCompatActivity {
         addressTextView.setText(userResult.getAddress());
         phoneNumberTextView.setText(userResult.getPhoneNumber());
         emailTextView.setText(String.valueOf(userResult.getEmail()));
-        createdAtTextView.setText(userResult.getCreatedAt());
-        updatedAtTextView.setText(userResult.getUpdatedAt());
+        createdAtTextView.setText(Utils.converStringToDate(userResult.getCreatedAt()));
+        updatedAtTextView.setText(Utils.converStringToDate(userResult.getUpdatedAt()));
     }
 
     @Override
