@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.javier.health.controller.UserController;
 import com.javier.health.controller.UserControllerFactory;
 import com.javier.health.models.User;
+import com.javier.health.models.dao.UserDAO;
 import com.javier.health.utils.Constants;
 import com.javier.health.utils.Utils;
 import com.javier.health.view.UserAdapter;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements UserResponseListe
     private UserController mUserController;
     ListView mListView;
     List<User> mUserlist;
+    private UserDAO mUserDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +35,19 @@ public class MainActivity extends AppCompatActivity implements UserResponseListe
         UserControllerFactory.setResponseListerner(this);
         mListView = (ListView) findViewById(R.id.activity_main_list_view);
 
-        mUserController= UserControllerFactory.getUserController();
-        mUserController.request();
+        mUserDAO = new UserDAO(this);
+
+        if (Utils.isOnline(MainActivity.this)) {
+            mUserController = UserControllerFactory.getUserController();
+            mUserController.request(this);
+        } else {
+            if(exitsDB()){
+                mUserlist=mUserDAO.readAllAsc();
+                createListView();
+            } else {
+                Toast.makeText(this, R.string.activity_main_check_your_connection, Toast.LENGTH_LONG).show();
+            }
+        }
 
         mListView.setOnItemClickListener(this);
     }
@@ -43,8 +56,7 @@ public class MainActivity extends AppCompatActivity implements UserResponseListe
     public void onSuccess(List<User> list) {
         Log.d(sTag, "onSuccess");
         mUserlist = list;
-        UserAdapter adapter = new UserAdapter(this, list);
-        mListView.setAdapter(adapter);
+        createListView();
     }
 
     @Override
@@ -53,7 +65,13 @@ public class MainActivity extends AppCompatActivity implements UserResponseListe
         if (Utils.isOnline(MainActivity.this)) {
             Toast.makeText(MainActivity.this, R.string.activity_main_invalid_field, Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(this, R.string.activity_main_check_your_connection, Toast.LENGTH_LONG).show();
+            if(exitsDB()){
+                mUserlist=mUserDAO.readAllAsc();
+                createListView();
+            } else {
+                Toast.makeText(this, R.string.activity_main_check_your_connection, Toast.LENGTH_LONG).show();
+
+            }
         }
     }
 
@@ -63,5 +81,15 @@ public class MainActivity extends AppCompatActivity implements UserResponseListe
         intent.putExtra(Constants.PARCELABLE, mUserlist.get(position));
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
+
+    public boolean exitsDB(){
+        int user = mUserDAO.getCount();
+        return user > 0;
+    }
+
+    public void createListView() {
+        UserAdapter adapter = new UserAdapter(this, mUserlist);
+        mListView.setAdapter(adapter);
     }
 }

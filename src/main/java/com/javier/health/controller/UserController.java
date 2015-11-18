@@ -1,5 +1,7 @@
 package com.javier.health.controller;
 
+import android.content.Context;
+
 import com.javier.health.models.User;
 import com.javier.health.service.UserServiceImpl;
 import com.javier.health.webservices.UserResponseHandler;
@@ -17,9 +19,9 @@ public class UserController implements UserResponseHandler {
         this.mListener = mListener;
     }
 
-    public void request() {
+    public void request(Context context) {
         UserServiceImpl receiver = new UserServiceImpl();
-        receiver.getUser(this);
+        receiver.getUser(this, context);
 
     }
 

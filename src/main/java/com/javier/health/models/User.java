@@ -5,33 +5,51 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.javier.health.utils.Constants;
+
+import garin.artemiy.sqlitesimple.library.annotations.Column;
 
 /**
  * Created by javiergonzalezcabezas on 18/11/15.
  */
 public class User implements Parcelable {
 
+    @Column(name = Constants.FIRST_NAME)
     @SerializedName("first_name")
     @Expose
     private String firstName;
+
+    @Column(name = Constants.SURNAME)
     @SerializedName("surname")
     @Expose
     private String surname;
+
+    @Column(name = Constants.ADDRESS)
     @SerializedName("address")
     @Expose
     private String address;
+
+    @Column(name = Constants.PHONE_NUMBER)
     @SerializedName("phone_number")
     @Expose
     private String phoneNumber;
+
+    @Column(name = Constants.EMAIL)
     @SerializedName("email")
     @Expose
     private String email;
+
+    @Column(name = Constants._ID)
     @SerializedName("id")
     @Expose
     private Integer id;
+
+    @Column(name = Constants.CREATED_AT)
     @SerializedName("createdAt")
     @Expose
     private String createdAt;
+
+    @Column(name = Constants.UPDATED_AT)
     @SerializedName("updatedAt")
     @Expose
     private String updatedAt;
