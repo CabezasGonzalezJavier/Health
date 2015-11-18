@@ -2,13 +2,12 @@
   This project:
         - MVC.
         -  Mokito.
-        -  JSONObject.
+        -  GSON.
         -  ORM.
         -  ViewHolder.
   
   I chose MVP(Model, View, Controller).
   JUnit and Mokito, It lets you write beautiful tests with clean & simple API.  The tests are very readable and they produce clean verification errors.
-  JSON, I chose JSONObject, a modifiable set of name/value mappings. Names are unique, non-null strings. Values may be any mix of JSONObjects, JSONArrays, Strings, Booleans, Integers, Longs, Doubles or Null.
   
   Data base I chose a ORM library:
   
