@@ -2,4 +2,11 @@
     <string name="app_name">Health</string>
     <string name="activity_main_check_your_connection">Check your connection.</string>
     <string name="activity_main_invalid_field"> Invalid field</string>
+    <string name="activity_detail_first_name_title">First name:</string>
+    <string name="activity_detail_surname_title">Surname:</string>
+    <string name="activity_detail_address_title">Address:</string>
+    <string name="activity_detail_phone_number_title">Phone number:</string>
+    <string name="activity_detail_email_title">Email:</string>
+    <string name="activity_detail_created_at_title">Created at:</string>
+    <string name="activity_detail_updated_at_title">Updated at:</string>
 </resources>

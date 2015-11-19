@@ -8,45 +8,122 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.javier.health.DetailActivity">
+
     <TextView
-        android:id="@+id/activity_detail_first_name_text_view"
+        android:id="@+id/activity_detail_first_name_text_view_title"
+        style="@style/TitleTextAppearance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/TitleTextAppearance"/>
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/activity_detail_first_name_title" />
+
     <TextView
-        android:id="@+id/activity_detail_surname_text_view"
+        android:id="@+id/activity_detail_first_name_text_view"
+        style="@style/NormalTextAppearance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_detail_first_name_text_view_title"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/activity_detail_surname_text_view_title"
+        style="@style/TitleTextAppearance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/activity_detail_first_name_text_view"
-        style="@style/NormalTextAppearance"/>
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/activity_detail_surname_title" />
+
     <TextView
-        android:id="@+id/activity_detail_address_text_view"
+        android:id="@+id/activity_detail_surname_text_view"
+        style="@style/NormalTextAppearance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_detail_surname_text_view_title"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/activity_detail_address_text_view_title"
+        style="@style/TitleTextAppearance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/activity_detail_surname_text_view"
-        style="@style/NormalTextAppearance"/>
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/activity_detail_address_title" />
+
     <TextView
-        android:id="@+id/activity_detail_phone_number_text_view"
+        android:id="@+id/activity_detail_address_text_view"
+        style="@style/NormalTextAppearance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_detail_address_text_view_title"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/activity_detail_phone_number_text_view_title"
+        style="@style/TitleTextAppearance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/activity_detail_address_text_view"
-        style="@style/NormalTextAppearance"/>
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/activity_detail_phone_number_title" />
+
     <TextView
-        android:id="@+id/activity_detail_email_text_view"
+        android:id="@+id/activity_detail_phone_number_text_view"
+        style="@style/NormalTextAppearance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_detail_phone_number_text_view_title"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/activity_detail_email_text_view_title"
+        style="@style/TitleTextAppearance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/activity_detail_phone_number_text_view"
-        style="@style/NormalTextAppearance"/>
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/activity_detail_email_title" />
+
     <TextView
-        android:id="@+id/activity_detail_createdAt_text_view"
+        android:id="@+id/activity_detail_email_text_view"
+        style="@style/NormalTextAppearance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_detail_email_text_view_title"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/activity_detail_createdAt_text_view_title"
+        style="@style/TitleTextAppearance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/activity_detail_email_text_view"
-        style="@style/NormalTextAppearance"/>
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/activity_detail_created_at_title" />
+
     <TextView
-        android:id="@+id/activity_detail_updatedAt_text_view"
+        android:id="@+id/activity_detail_createdAt_text_view"
+        style="@style/NormalTextAppearance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_detail_createdAt_text_view_title"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/activity_detail_updatedAt_text_view_title"
+        style="@style/TitleTextAppearance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/activity_detail_createdAt_text_view"
-        style="@style/NormalTextAppearance"/>
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/activity_detail_updated_at_title" />
+
+    <TextView
+        android:id="@+id/activity_detail_updatedAt_text_view"
+        style="@style/NormalTextAppearance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_detail_updatedAt_text_view_title"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

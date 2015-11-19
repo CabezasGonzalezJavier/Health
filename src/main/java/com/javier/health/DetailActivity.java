@@ -36,10 +36,11 @@ public class DetailActivity extends AppCompatActivity {
         TextView updatedAtTextView = (TextView) findViewById(R.id.activity_detail_updatedAt_text_view);
 
         nameTextView.setText(userResult.getFirstName());
-        surnameTextView.setText(String.valueOf(userResult.getSurname()));
+        surnameTextView.setText(userResult.getSurname());
         addressTextView.setText(userResult.getAddress());
         phoneNumberTextView.setText(userResult.getPhoneNumber());
-        emailTextView.setText(String.valueOf(userResult.getEmail()));
+        emailTextView.setText(userResult.getEmail());
+
         createdAtTextView.setText(Utils.converStringToDate(userResult.getCreatedAt()));
         updatedAtTextView.setText(Utils.converStringToDate(userResult.getUpdatedAt()));
     }
